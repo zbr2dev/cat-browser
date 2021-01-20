@@ -1,0 +1,13 @@
+.card-component {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 18rem;
+    margin: 20px;
+    height: 100%;
+  }
+  &__button {
+    width: 100%;
+  }
+}
