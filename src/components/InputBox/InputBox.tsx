@@ -5,14 +5,10 @@ import './styles.scss';
 
 interface IInputBox {
     list: any[]
-    getCatBreed: (props: any) => void
+    getCatBreed: (props: string) => void
 }
 
 const InputBox = ({list, getCatBreed}: IInputBox) => {
-
-    useEffect(() => {
-
-    }, [])
 
     const handleChange = (event: any) => {
         const name = event.target.value;

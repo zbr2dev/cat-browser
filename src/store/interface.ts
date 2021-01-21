@@ -7,6 +7,8 @@ export interface IInitialState {
     cats: Array<any[]>
     singleBreed: any
     singleCat: any
+    loader: boolean
+    error: false
 }
 
 

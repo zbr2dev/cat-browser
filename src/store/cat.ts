@@ -1,10 +1,12 @@
-import { LOAD_ALL_CATS, GET_CAT, GET_SINGLE_CAT } from './types';
+import { LOAD_ALL_CATS, GET_CAT, GET_SINGLE_CAT, SET_LOADER, SET_ERROR } from './types';
 import { IInitialState, IAction } from './interface';
 
 const initialState: IInitialState = {
     cats: [],
     singleBreed: null,
-    singleCat: null
+    singleCat: null,
+    loader: false,
+    error: false,
 }
 
 const store = (state = initialState, action: IAction) => {
@@ -25,6 +27,18 @@ const store = (state = initialState, action: IAction) => {
             return {
                 ...state,
                 singleCat: action.payload
+            }
+        }
+        case SET_LOADER: {
+            return {
+                ...state,
+                loader: action.payload
+            }
+        }
+        case SET_ERROR: {
+            return {
+                ...state,
+                error: action.payload
             }
         }
         default: {

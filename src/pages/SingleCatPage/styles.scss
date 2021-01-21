@@ -1,0 +1,9 @@
+.cat-page{
+  display: flex;
+  flex-direction: column;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+}

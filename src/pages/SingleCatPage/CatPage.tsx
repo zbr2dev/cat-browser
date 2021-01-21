@@ -1,16 +1,20 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { ICat } from '../../shared/interface';
+
+import './styles.scss';
 
 interface ICatPage {
-    cat: any
+    cat: ICat
 }
 
 const CatPage = ({cat}: ICatPage) => {
   return(
     <>
+      { cat === null && <Redirect to="/" /> }
       {cat &&
-        <Card>
+        <Card className="cat-page">
           <Card.Header>
             <Link to="/">
               <Button variant="primary">Back</Button>
@@ -21,10 +25,10 @@ const CatPage = ({cat}: ICatPage) => {
                 <Card.Title>
                   {cat.name}
                 </Card.Title>
-                <Card.Text>
-                  <h5>Origin:{cat.origin}</h5>
+                <Card.Text className="cat-page__description">
+                  <strong>Origin:{cat.origin}</strong>
                   <strong>{cat.temperament}</strong>
-                  <p>{cat.description}</p>
+                  <span>{cat.description}</span>
                   </Card.Text>
               </Card.Body>
           </Card>
